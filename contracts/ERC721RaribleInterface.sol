@@ -5,13 +5,13 @@ pragma experimental ABIEncoderV2;
 
 import "https://github.com/rarible/protocol-contracts/blob/958064138538215fa8fa654ea7148621f7ce53a1/lazy-mint/contracts/erc-721/LibERC721LazyMint.sol";
 
+/// @dev https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol
+/// @dev https://github.com/rarible/protocol-documentation/blob/master/asset/creating-an-asset.md
 interface ERC721RaribleInterface {
     event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
     function ownerOf(uint256 _tokenId) external view returns (address);
     function transferFrom(address _from, address _to, uint256 _tokenId) external;
-    function approve(address _approved, uint256 _tokenId) external payable;
     function getApproved(uint256 tokenId) external view returns (address);
-
     function tokenURI(uint256 _tokenId) external view returns (string memory);
     function getRaribleV2Royalties(uint256 id) external view returns (LibPart.Part[] memory);
     function mintAndTransfer(LibERC721LazyMint.Mint721Data memory data, address to) external;
