@@ -7,7 +7,7 @@ import "https://github.com/rarible/protocol-contracts/blob/958064138538215fa8fa6
 
 /// @dev https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/token/ERC721/ERC721.sol
 /// @dev https://github.com/rarible/protocol-documentation/blob/master/asset/creating-an-asset.md
-interface ERC721RaribleInterface {
+interface Erc721RaribleInterface {
     event Transfer(address indexed _from, address indexed _to, uint256 indexed _tokenId);
     function ownerOf(uint256 _tokenId) external view returns (address);
     function transferFrom(address _from, address _to, uint256 _tokenId) external;
